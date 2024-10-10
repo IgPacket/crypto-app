@@ -1,0 +1,57 @@
+.editControlsWrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.editButton {
+    background-color: #4CAF50;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.editButton:hover {
+    background-color: #45a049;
+}
+
+.editButton:active {
+    background-color: #3e8e41;
+}
+
+.editModeButtons {
+    display: flex;
+    gap: 10px;
+}
+
+.saveButton, .cancelButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.saveButton:hover {
+    background-color: #45a049;
+}
+
+.saveButton:active {
+    background-color: #3e8e41;
+}
+
+.cancelButton {
+    background-color: #f44336;
+}
+
+.cancelButton:hover {
+    background-color: #f63222;
+}
+
+.cancelButton:active  {
+    background-color: #c22217;
+}
+

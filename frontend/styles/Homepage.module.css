@@ -1,0 +1,42 @@
+.homepage {
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.header {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.balanceButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.importButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.right {
+    text-align: right;
+    padding: 10px 0;
+}
+
+.importButton:hover {
+    background-color: #45a049;
+}
+
+.importButton:active {
+    background-color: #3e8e41;
+}

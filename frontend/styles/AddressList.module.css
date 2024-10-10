@@ -1,0 +1,95 @@
+.addressList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.currencyBlock {
+    margin-bottom: 20px;
+}
+
+.currencyHeader {
+    font-weight: bold;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.currencyHeader:hover {
+    color: #565656;
+}
+
+.currencyHeader:active {
+    color: #3d3d3d;
+}
+
+.addressItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+.balanceButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.editControlsBlock {
+    display: flex;
+    gap: 10px;
+}
+
+.editControlsAddress {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 4px 6px;
+    border-radius: 5px;
+}
+
+.editControlsCurrency {
+    background-color: #058d05;
+    color: white;
+    border: none;
+    padding: 6px 8px;
+    border-radius: 5px;
+}
+
+.editControlsAddressDisabled {
+    background-color: #868686;
+    color: white;
+    border: none;
+    padding: 4px 6px;
+    border-radius: 5px;
+}
+
+.editControlsAddress:hover {
+    background-color: #3ea841;
+
+}
+
+.editControlsAddress:active {
+    background-color: #2a7e2d;
+
+}
+
+.editControlsCurrency:hover {
+    background-color: #036703;
+}
+
+.editControlsCurrency:active {
+    background-color: #024d02;
+
+}
+
+.balanceButton:hover, .editControlsButton:hover {
+    background-color: #45a049;
+}
+
+.balanceButton:active, .editControlsButton:active {
+    background-color: #3e8e41;
+}
+

@@ -1,0 +1,76 @@
+networks:
+  my-app-network:
+
+volumes:
+  postgresql_data:
+  pgadmin_sessions:
+  pgadmin_data:
+
+services:
+  db:
+    container_name: PostgresDB
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "postgres"
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+    restart: always
+    networks:
+      - my-app-network
+
+  migrate:
+    build: ./backend
+    environment:
+      DATABASE_URL: db://postgres:postgres@db:5432/postgres
+    depends_on:
+      - db
+    command: [ "npx", "sequelize-cli", "db:migrate" ]
+    networks:
+      - my-app-network
+
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    networks:
+      - my-app-network
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=production
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - my-app-network
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - NEXT_PUBLIC_API_URL=http://backend:3000
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    ports:
+      - "8083:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "no@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "123"
+    volumes:
+      - ./pgadmin_servers.json:/pgadmin4/servers.json
+      - pgadmin_sessions:/var/lib/pgadmin
+      - pgadmin_data:/pgadmin
+    networks:
+      - my-app-network
